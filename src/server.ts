@@ -1,5 +1,6 @@
 import express = require('express');
 import * as bodyParser from 'body-parser';
+import morgan from 'morgan';
 
 const jsonParser = bodyParser.json();
 
@@ -13,20 +14,7 @@ import { CustomRequestHandler } from './model/express';
 
 const app = express();
 
-const authenticator: CustomRequestHandler = (req, res, next) => {
-    const username = 'Alex123';
-    req.user = username;
-    next();
-};
-
-const logger: CustomRequestHandler = (req, res, next) => {
-    console.log(
-        `User: ${req.user} ${new Date()} - ${req.method} Request to ${req.path}`
-    );
-    next();
-};
-
-app.use(authenticator);
+const logger = morgan('dev');
 app.use(logger);
 
 app.get('/', (req, res, next) => {
