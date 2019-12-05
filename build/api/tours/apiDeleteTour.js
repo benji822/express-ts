@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_1 = require("../data/data");
-const messages_1 = require("../model/shared/messages");
+const data_1 = require("../../data/data");
+const messages_1 = require("../../model/shared/messages");
 exports.apiDeleteTour = (req, res, next) => {
     const tourId = req.params.id;
     const tourIndex = data_1.DataStore.tours.findIndex((item) => item.id === tourId);

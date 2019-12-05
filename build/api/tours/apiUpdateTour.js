@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_1 = require("../data/data");
+const data_1 = require("../../data/data");
 exports.apiUpdateTour = (req, res, next) => {
     const tourId = req.params.id;
     const tourIndex = data_1.DataStore.tours.findIndex((item) => item.id === tourId);

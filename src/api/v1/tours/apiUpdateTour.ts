@@ -1,5 +1,5 @@
 import { RequestHandler } from 'express';
-import { DataStore } from '../data/data';
+import { DataStore } from '../../../data/data';
 
 export const apiUpdateTour: RequestHandler = (req, res, next) => {
     const tourId = req.params.id;
@@ -17,7 +17,8 @@ export const apiUpdateTour: RequestHandler = (req, res, next) => {
             tourDescription:
                 req.body.tourDescription || originalData.tourDescription,
             price: req.body.price || originalData.price,
-            currency: req.body.currency || originalData.currency
+            currency: req.body.currency || originalData.currency,
+            img: originalData.img
         };
         DataStore.tours[tourIndex] = newTour;
         res.json({ status: 'success', message: 'Element updated!' });

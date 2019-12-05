@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_1 = require("../data/data");
+const data_1 = require("../../../data/data");
 const v4_1 = __importDefault(require("uuid/v4"));
-const messages_1 = require("../model/shared/messages");
+const messages_1 = require("../../../model/shared/messages");
 exports.apiCreateTour = (req, res, next) => {
     const requiredFields = ['tourTitle', 'location'];
     const givenFields = Object.getOwnPropertyNames(req.body);

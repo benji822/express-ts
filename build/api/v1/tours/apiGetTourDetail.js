@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_1 = require("../data/data");
-const tourDetail_1 = require("../model/shared/tourDetail");
-const static_1 = require("../api/general/static");
+const data_1 = require("../../../data/data");
+const tourDetail_1 = require("../../../model/shared/tourDetail");
+const static_1 = require("../general/static");
 exports.apiGetTourDetail = (req, res, next) => {
     const tourId = req.params.id;
     const selectedTour = data_1.DataStore.tours.find((el) => el.id === tourId);
