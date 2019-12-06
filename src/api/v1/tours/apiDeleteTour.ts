@@ -11,6 +11,6 @@ export const apiDeleteTour: RequestHandler = (req, res, next) => {
         DataStore.tours.splice(tourIndex, 1);
         res.json(new PublicInfo('Tour delete', 200));
     } else {
-        res.json(new APIError('Validation Error', 'Tour not found', 400));
+        next(new APIError('Validation Error', 'Tour not found', 400));
     }
 };

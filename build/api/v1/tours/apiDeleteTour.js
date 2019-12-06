@@ -10,6 +10,6 @@ exports.apiDeleteTour = (req, res, next) => {
         res.json(new messages_1.PublicInfo('Tour delete', 200));
     }
     else {
-        res.json(new messages_1.APIError('Validation Error', 'Tour not found', 400));
+        next(new messages_1.APIError('Validation Error', 'Tour not found', 400));
     }
 };
